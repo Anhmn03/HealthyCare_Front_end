@@ -1,0 +1,516 @@
+/* src/App.css */
+
+/* Reset mặc định và font chữ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  .App {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px; /* Tăng padding để header rộng rãi hơn */
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Shadow nhẹ để tạo chiều sâu */
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e0e0e0; /* Thêm viền dưới nhẹ */
+  }
+  
+  .logo {
+    font-size: 30px; /* Tăng kích thước logo */
+    font-weight: 700;
+    color: #1a73e8; /* Màu xanh y tế */
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Hiệu ứng đổi màu khi hover */
+  }
+  
+  .logo:hover {
+    color: #1557b0; /* Màu xanh đậm hơn khi hover */
+  }
+  
+  .logo-icon {
+    margin-right: 10px;
+    font-size: 36px; /* Tăng kích thước biểu tượng */
+    color: #1a73e8;
+  }
+  
+  .nav {
+    display: flex;
+    gap: 15px; /* Tăng khoảng cách giữa các nút */
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #f0f0f0; /* Nền xám nhạt hơn */
+    border-radius: 30px; /* Bo góc mềm mại hơn */
+    border: 1px solid #e0e0e0; /* Thêm viền nhẹ */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav a:hover {
+    background-color: #1a73e8; /* Màu xanh y tế khi hover */
+    color: #fff;
+    border-color: #1a73e8; /* Viền đổi màu khi hover */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Thêm shadow nhẹ khi hover */
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 15px; /* Tăng khoảng cách giữa các nút */
+  }
+  
+  .help-btn, .profile-btn, .search-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* Bo góc mềm mại hơn */
+    background-color: #f0f0f0; /* Nền xám nhạt hơn */
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Khoảng cách giữa biểu tượng và chữ */
+    transition: all 0.3s ease;
+    border: 1px solid #e0e0e0; /* Thêm viền nhẹ */
+  }
+  
+  .help-btn::before, .profile-btn::before, .search-btn::before {
+    font-size: 18px;
+  }
+  
+  .help-btn::before {
+    content: '❓';
+  }
+  
+  .profile-btn::before {
+    content: '👤';
+  }
+  
+  .search-btn::before {
+    content: '🔍';
+  }
+  
+  .help-btn:hover, .search-btn:hover, .profile-btn:hover {
+    background-color: #1a73e8; /* Màu xanh y tế khi hover */
+    color: #fff;
+    border-color: #1a73e8;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsive cho Header */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      gap: 20px;
+      padding: 15px;
+    }
+  
+    .nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .nav a {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  
+    .header-actions {
+      gap: 10px;
+    }
+  
+    .help-btn, .profile-btn, .search-btn {
+      padding: 8px 15px;
+      font-size: 14px;
+    }
+  }
+  
+  /* Phần còn lại của CSS giữ nguyên */
+  .hospital-intro {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin: 60px 0;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-content {
+    flex: 1;
+  }
+  
+  .intro-content h1 {
+    font-size: 40px;
+    color: #1a73e8;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .intro-content p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+  }
+  
+  .cta-btn {
+    padding: 12px 30px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-btn:hover {
+    background-color: #1557b0;
+  }
+  
+  .intro-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Services */
+  .services {
+    margin: 80px 0;
+  }
+  
+  .services h2 {
+    font-size: 32px;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .service-card {
+    padding: 30px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .service-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #1a73e8;
+  }
+  
+  .service-card h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  
+  .service-card p {
+    color: #666;
+    font-size: 16px;
+  }
+  
+  /* News Section */
+  .news-section {
+    margin: 80px 0;
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 15px;
+  }
+  
+  .news-section h2 {
+    font-size: 32px;
+    color: #1a73e8;
+    text-align: center;
+    margin-bottom: 40px;
+    font-weight: 700;
+  }
+  
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+  }
+  
+  .news-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .news-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin: 20px;
+    font-weight: 600;
+  }
+  
+  .news-card p {
+    color: #666;
+    margin: 0 20px 20px;
+    font-size: 16px;
+  }
+  
+  .read-more {
+    display: block;
+    margin: 0 20px 20px;
+    color: #1a73e8;
+    font-weight: 500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .read-more:hover {
+    color: #1557b0;
+    text-decoration: underline;
+  }
+  
+  /* Contact Section */
+  .contact-section {
+    margin: 80px 0;
+    text-align: center;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .contact-section h2 {
+    font-size: 32px;
+    color: #1a73e8;
+    margin-bottom: 20px;
+    font-weight: 700;
+  }
+  
+  .contact-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  .contact-section a {
+    color: #1a73e8;
+    font-weight: 500;
+    text-decoration: none;
+  }
+  
+  .contact-section a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Footer */
+  .footer {
+    padding: 60px 0;
+    background: #fff;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .newsletter {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .newsletter h3 {
+    font-size: 28px;
+    color: #1a73e8;
+    margin-bottom: 15px;
+    font-weight: 700;
+  }
+  
+  .newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .newsletter-form input {
+    padding: 12px 20px;
+    width: 350px;
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    font-size: 16px;
+    outline: none;
+  }
+  
+  .newsletter-form button {
+    padding: 12px 30px;
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .newsletter-form button:hover {
+    background-color: #1557b0;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .footer-links div {
+    flex: 1;
+  }
+  
+  .footer-links h4 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .footer-links a {
+    display: block;
+    color: #666;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #1a73e8;
+  }
+  
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #666;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+  }
+  
+  .language select {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    font-size: 20px;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #1a73e8;
+  }
+  
+  /* Responsive cho các section khác */
+  @media (max-width: 768px) {
+    .hospital-intro {
+      flex-direction: column;
+      padding: 20px;
+    }
+  
+    .intro-content h1 {
+      font-size: 28px;
+    }
+  
+    .intro-content p {
+      font-size: 16px;
+    }
+  
+    .intro-image img {
+      max-width: 100%;
+    }
+  
+    .services-grid, .news-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .newsletter-form {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .newsletter-form input {
+      width: 100%;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+      gap: 30px;
+      text-align: center;
+    }
+  
+    .footer-bottom {
+      flex-direction: column;
+      gap: 15px;
+      text-align: center;
+    }
+  }
